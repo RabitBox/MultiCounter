@@ -18,28 +18,39 @@ public class CounterBox : MonoBehaviour
 	private Text _nameText;         // カウントするモノの名前
 	[SerializeField]
 	private Text _countText;        // カウント数の表示テキストフィールド
-
+	[SerializeField]
 	private int _countNumber;       // 現在のカウント
 
-	private readonly int MAX_COUNT = 99999999;	// カウンターの最大カウント数
+	private readonly int MAX_COUNT = 99999999;  // カウンターの最大カウント数
 
+	public int CountNumber
+	{
+		get => _countNumber;
+		private set
+		{
+			if (value >= 0 
+				&& value <= MAX_COUNT)
+			{
+				_countNumber = value;
+				_countText.text = _countNumber.ToString();
+			}
+		}
+	}
+
+
+	//--------------------------------------------------
 	// Start is called before the first frame update
 	void Start()
 	{
-
-	}
-
-	// Update is called once per frame
-	void Update()
-	{
-
+		if (_addButton != null) _addButton.onClick.AddListener(() => CountNumber += 1);
+		if (_gainButton != null) _gainButton.onClick.AddListener(() => CountNumber -= 1);
 	}
 
 	/// <summary>
 	/// 名前を設定する。
 	/// 初期化時のみ呼び出せるようにする。
 	/// </summary>
-	/// <param name="setName"></param>
+	/// <param name="setName">設定する名前。</param>
 	public void SetName(string setName)
 	{
 		if (_nameText != null)
