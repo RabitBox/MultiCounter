@@ -11,15 +11,15 @@ public class CounterBox : MonoBehaviour
 	//--------------------------------------------------
 	// フィールド
 	[SerializeField]
-	private Button _addButton;      // 増加ボタン
+	private Button _addButton = null;	// 増加ボタン
 	[SerializeField]
-	private Button _gainButton;     // 減少ボタン
+	private Button _gainButton = null;	// 減少ボタン
 	[SerializeField]
-	private Text _nameText;         // カウントするモノの名前
+	private Text _nameText = null;		// カウントするモノの名前
 	[SerializeField]
-	private Text _countText;        // カウント数の表示テキストフィールド
+	private Text _countText = null;		// カウント数の表示テキストフィールド
 	[SerializeField]
-	private int _countNumber;       // 現在のカウント
+	private int _countNumber = 0;		// 現在のカウント
 
 	private readonly int MAX_COUNT = 99999999;  // カウンターの最大カウント数
 

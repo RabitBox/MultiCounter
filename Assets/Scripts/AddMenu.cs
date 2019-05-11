@@ -8,9 +8,9 @@ public class AddMenu : MonoBehaviour
 	//--------------------------------------------------
 	// フィールド
 	[SerializeField]
-	private Button _createButton;       // 生成ボタン
+	private Button _createButton = null;	// 生成ボタン
 	[SerializeField]
-	private InputField _inputField;     // インプットフィールド
+	private InputField _inputField = null;	// インプットフィールド
 
 	// Start is called before the first frame update
 	void Start()
