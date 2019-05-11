@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CounterManager : MonoBehaviour
+public class CounterManager : SingletonMonoBehavior<CounterManager>
 {
 	//--------------------------------------------------
 	// フィールド
