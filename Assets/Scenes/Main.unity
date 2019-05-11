@@ -120,9 +120,9 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &8010229 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6503029264937528596, guid: 2fc9ae918d7027d44a5547c5ae68e68f,
+--- !u!224 &8010232 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6503029264937528595, guid: 2fc9ae918d7027d44a5547c5ae68e68f,
     type: 3}
   m_PrefabInstance: {fileID: 6503029264059144543}
   m_PrefabAsset: {fileID: 0}
@@ -537,7 +537,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &364942652
 RectTransform:
   m_ObjectHideFlags: 0
@@ -639,7 +639,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _addCounterButton: {fileID: 1796834125}
-  _createTarget: {fileID: 8010229}
+  _createTarget: {fileID: 8010232}
+  _prefavCounterBox: {fileID: 5650726209197964890, guid: c995abec0dfd1a54f9873ad5be707ec1,
+    type: 3}
 --- !u!4 &379564911
 Transform:
   m_ObjectHideFlags: 0

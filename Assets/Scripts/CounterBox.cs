@@ -42,8 +42,14 @@ public class CounterBox : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
-		if (_addButton != null) _addButton.onClick.AddListener(() => CountNumber += 1);
-		if (_gainButton != null) _gainButton.onClick.AddListener(() => CountNumber -= 1);
+		if (_addButton != null)
+		{
+			_addButton.onClick.AddListener(() => CountNumber += 1);
+		}
+		if (_gainButton != null)
+		{
+			_gainButton.onClick.AddListener(() => CountNumber -= 1);
+		}
 	}
 
 	/// <summary>

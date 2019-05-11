@@ -10,5 +10,14 @@ public class CounterManager : SingletonMonoBehavior<CounterManager>
 	[SerializeField]
 	private Button _addCounterButton;
 	[SerializeField]
-	private GameObject _createTarget;
+	private Transform _createTarget;
+
+	[SerializeField]
+	private GameObject _prefavCounterBox;
+
+	public void CreateCounterBox(string setName)
+	{
+		var buttonData = (Instantiate(_prefavCounterBox, _createTarget) as GameObject).GetComponent<CounterBox>();
+		buttonData.SetName(setName);
+	}
 }

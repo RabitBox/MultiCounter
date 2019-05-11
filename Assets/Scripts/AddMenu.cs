@@ -15,7 +15,18 @@ public class AddMenu : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
-		if (_inputField != null) _inputField.onValueChanged.AddListener(
+		if (_inputField != null)
+		{
+			_inputField.onValueChanged.AddListener(
 			   value => _createButton.interactable = (_inputField.text == string.Empty) ? false : true);
+		}
+		if (_createButton != null)
+		{
+			_createButton.onClick.AddListener(() => 
+				{
+					CounterManager.Instance.CreateCounterBox(_inputField.text);
+					_inputField.text = string.Empty;
+				});
+		}
 	}
 }
