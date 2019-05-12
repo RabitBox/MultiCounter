@@ -13,7 +13,9 @@ public class CounterBox : MonoBehaviour
 	[SerializeField]
 	private Button _addButton = null;	// 増加ボタン
 	[SerializeField]
-	private Button _gainButton = null;	// 減少ボタン
+	private Button _gainButton = null;  // 減少ボタン
+	[SerializeField]
+	private Button _closeButton = null;	// カウンターボックス削除ボタン
 	[SerializeField]
 	private Text _nameText = null;		// カウントするモノの名前
 	[SerializeField]
@@ -49,6 +51,10 @@ public class CounterBox : MonoBehaviour
 		if (_gainButton != null)
 		{
 			_gainButton.onClick.AddListener(() => CountNumber -= 1);
+		}
+		if (_closeButton != null)
+		{
+			_closeButton.onClick.AddListener(() => Destroy(this.gameObject) );
 		}
 	}
 

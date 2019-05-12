@@ -430,7 +430,7 @@ GameObject:
   - component: {fileID: 191951759}
   - component: {fileID: 191951761}
   m_Layer: 5
-  m_Name: BackPanel
+  m_Name: MainPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -415,6 +415,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _addButton: {fileID: 2203772472182726655}
   _gainButton: {fileID: 3028403772077158991}
+  _closeButton: {fileID: 3572470304021967007}
   _nameText: {fileID: 6950139688878661931}
   _countText: {fileID: 7219036769523486519}
   _countNumber: 0
