@@ -7,13 +7,13 @@ public class CounterManager : SingletonMonoBehavior<CounterManager>
 {
 	//--------------------------------------------------
 	// フィールド
+	//[SerializeField]
+	//private Button _addCounterButton = null;
 	[SerializeField]
-	private Button _addCounterButton;
-	[SerializeField]
-	private Transform _createTarget;
+	private Transform _createTarget = null;
 
 	[SerializeField]
-	private GameObject _prefavCounterBox;
+	private GameObject _prefavCounterBox = null;
 
 	public void CreateCounterBox(string setName)
 	{
