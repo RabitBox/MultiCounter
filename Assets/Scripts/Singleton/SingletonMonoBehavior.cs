@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 
-public class SingletonMonoBehavior<T> : MonoBehaviour where T : SingletonMonoBehavior<T>
+[DisallowMultipleComponent]
+public class SingletonMonoBehavior<T> : MonoBehaviour 
+	where T : SingletonMonoBehavior<T>
 {
 	protected static T _instance = null;
 	public static T Instance
