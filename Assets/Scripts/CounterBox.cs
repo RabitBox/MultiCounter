@@ -23,7 +23,7 @@ public class CounterBox : MonoBehaviour
 	[SerializeField]
 	private int _countNumber = 0;		// 現在のカウント
 
-	private readonly int MAX_COUNT = 99999999;  // カウンターの最大カウント数
+	private const int MAX_COUNT = 99999999;  // カウンターの最大カウント数
 
 	public int CountNumber
 	{
