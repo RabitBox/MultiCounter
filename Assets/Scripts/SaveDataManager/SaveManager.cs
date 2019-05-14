@@ -13,7 +13,7 @@ public class SaveManager
 	/// <param name="fileName">データを保存するファイル名。</param>
 	public static void Save(string content, string fileName = "save.dat")
 	{
-		File.WriteAllText($"{Application.persistentDataPath}/{fileName}", content);
+		File.WriteAllText(Path.Combine(Application.persistentDataPath, fileName), content);
 	}
 
 	/// <summary>
@@ -23,6 +23,6 @@ public class SaveManager
 	/// <returns>読み込んだデータ。</returns>
 	public static string Load(string fileName = "save.dat")
 	{
-		return File.ReadAllText($"{Application.persistentDataPath}/{fileName}");
+		return File.ReadAllText(Path.Combine(Application.persistentDataPath, fileName));
 	}
 }

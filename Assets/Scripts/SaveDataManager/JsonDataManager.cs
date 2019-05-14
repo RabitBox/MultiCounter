@@ -12,6 +12,7 @@ public class JsonDataManager
 	/// <param name="content">保存するデータ。</param>
 	/// <param name="fileName">保存するデータ名。</param>
 	public static void Save<T>(T content, string fileName = "save.dat")
+		where T : class
 	{
 		SaveManager.Save(JsonUtility.ToJson(content), fileName);
 	}
@@ -23,6 +24,7 @@ public class JsonDataManager
 	/// <param name="fileName">読み込むデータ名。</param>
 	/// <returns>読み込んだデータ。</returns>
 	public static T Load<T>(string fileName = "save.dat")
+		where T : class
 	{
 		return JsonUtility.FromJson<T>(SaveManager.Load(fileName));
 	}
