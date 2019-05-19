@@ -7,8 +7,6 @@ public class CounterManager : SingletonMonoBehavior<CounterManager>
 {
 	//--------------------------------------------------
 	// フィールド
-	//[SerializeField]
-	//private Button _addCounterButton = null;
 	[SerializeField]
 	private Transform _createTarget = null;
 
