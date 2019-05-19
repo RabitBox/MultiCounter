@@ -11,17 +11,17 @@ public class CounterBox : MonoBehaviour
 	//--------------------------------------------------
 	// フィールド
 	[SerializeField]
-	private Button _addButton = null;	// 増加ボタン
+	private Button _addButton = null;   // 増加ボタン
 	[SerializeField]
 	private Button _gainButton = null;  // 減少ボタン
 	[SerializeField]
-	private Button _closeButton = null;	// カウンターボックス削除ボタン
+	private Button _closeButton = null; // カウンターボックス削除ボタン
 	[SerializeField]
-	private Text _nameText = null;		// カウントするモノの名前
+	private Text _nameText = null;      // カウントするモノの名前
 	[SerializeField]
-	private Text _countText = null;		// カウント数の表示テキストフィールド
+	private Text _countText = null;     // カウント数の表示テキストフィールド
 	[SerializeField]
-	private int _countNumber = 0;		// 現在のカウント
+	private int _countNumber = 0;       // 現在のカウント
 
 	private const int MAX_COUNT = 99999999;  // カウンターの最大カウント数
 
@@ -30,7 +30,7 @@ public class CounterBox : MonoBehaviour
 		get => _countNumber;
 		private set
 		{
-			if (value >= 0 
+			if (value >= 0
 				&& value <= MAX_COUNT)
 			{
 				_countNumber = value;
@@ -54,7 +54,7 @@ public class CounterBox : MonoBehaviour
 		}
 		if (_closeButton != null)
 		{
-			_closeButton.onClick.AddListener(() => Destroy(this.gameObject) );
+			_closeButton.onClick.AddListener(() => Destroy(this.gameObject));
 		}
 	}
 
@@ -69,5 +69,25 @@ public class CounterBox : MonoBehaviour
 		{
 			_nameText.text = setName;
 		}
+	}
+
+	/// <summary>
+	/// ボックスに登録された、セーブに必要なデータの出力。
+	/// </summary>
+	/// <returns>string型のセーブに必要なデータ</returns>
+	public string OutputData()
+	{
+		return string.Join(",", new string[] { _nameText.text, _countText.text });
+	}
+
+	/// <summary>
+	/// ボックスにデータを登録する。
+	/// </summary>
+	/// <param name="data">入力するデータ</param>
+	public void InputData(string data)
+	{
+		var splitData = data.Split(',');
+		SetName(splitData[0]);
+		CountNumber = int.Parse(splitData[1]);
 	}
 }
