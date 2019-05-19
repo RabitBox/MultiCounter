@@ -1,8 +1,11 @@
-﻿using UnityEngine;
+﻿//--------------------------------------------------
+// MonoBehaviorSingleton継承元クラス
+//--------------------------------------------------
+using UnityEngine;
 
 [DisallowMultipleComponent]
 public class SingletonMonoBehavior<T> : MonoBehaviour 
-	where T : SingletonMonoBehavior<T>
+	where T : SingletonMonoBehavior<T>, new()
 {
 	protected static T _instance = null;
 	public static T Instance

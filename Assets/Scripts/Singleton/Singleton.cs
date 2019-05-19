@@ -1,5 +1,8 @@
-﻿
-public class Singleton<T> where T : class, new()
+﻿//--------------------------------------------------
+// Singleton継承元クラス
+//--------------------------------------------------
+public class Singleton<T> 
+	where T : class, new()
 {
 	protected static T _instance = null;
 	public static T Instance
