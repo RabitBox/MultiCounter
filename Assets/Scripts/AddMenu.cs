@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// カウンターボックスを追加する処理を行うクラス
+/// </summary>
 public class AddMenu : MonoBehaviour
 {
 	//--------------------------------------------------
@@ -10,8 +13,10 @@ public class AddMenu : MonoBehaviour
 	[SerializeField]
 	private Button _createButton = null;	// 生成ボタン
 	[SerializeField]
-	private InputField _inputField = null;	// インプットフィールド
+	private InputField _inputField = null;  // インプットフィールド
 
+	//--------------------------------------------------
+	// メソッド
 	// Start is called before the first frame update
 	void Start()
 	{

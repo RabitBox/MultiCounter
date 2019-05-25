@@ -1,8 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
+/// <summary>
+/// カウンターボックスの管理を行うクラス
+/// 現在は追加補助のみ 05/26/19
+/// </summary>
 public class CounterManager : SingletonMonoBehavior<CounterManager>
 {
 	//--------------------------------------------------
@@ -13,6 +16,12 @@ public class CounterManager : SingletonMonoBehavior<CounterManager>
 	[SerializeField]
 	private GameObject _prefavCounterBox = null;
 
+	//--------------------------------------------------
+	// メソッド
+	/// <summary>
+	/// カウンターボックス生成処理
+	/// </summary>
+	/// <param name="setName">カウンターボックスに設定する名前。</param>
 	public void CreateCounterBox(string setName)
 	{
 		var buttonData = (Instantiate(_prefavCounterBox, _createTarget) as GameObject).GetComponent<CounterBox>();

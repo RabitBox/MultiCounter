@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-//--------------------------------------------------
-// カウントボックス
-//--------------------------------------------------
+/// <summary>
+/// カウンターボックス
+/// </summary>
 public class CounterBox : MonoBehaviour
 {
 	//--------------------------------------------------
@@ -30,16 +30,13 @@ public class CounterBox : MonoBehaviour
 		get => _countNumber;
 		private set
 		{
-			if (value >= 0
-				&& value <= MAX_COUNT)
-			{
-				_countNumber = value;
-				_countText.text = _countNumber.ToString();
-			}
+			_countNumber = Mathf.Clamp(value, 0, MAX_COUNT);
+			_countText.text = _countNumber.ToString();
 		}
 	}
 
-
+	//--------------------------------------------------
+	// メソッド
 	//--------------------------------------------------
 	// Start is called before the first frame update
 	void Start()
@@ -60,7 +57,7 @@ public class CounterBox : MonoBehaviour
 
 	/// <summary>
 	/// 名前を設定する。
-	/// 初期化時のみ呼び出せるようにする。
+	/// 初期化時のみ動作する。
 	/// </summary>
 	/// <param name="setName">設定する名前。</param>
 	public void SetName(string setName)
@@ -72,9 +69,9 @@ public class CounterBox : MonoBehaviour
 	}
 
 	/// <summary>
-	/// ボックスに登録された、セーブに必要なデータの出力。
+	/// セーブに必要なデータの出力。
 	/// </summary>
-	/// <returns>string型のセーブに必要なデータ</returns>
+	/// <returns>string型のセーブに必要なデータ。</returns>
 	public string OutputData()
 	{
 		return string.Join(",", new string[] { _nameText.text, _countText.text });
@@ -83,10 +80,11 @@ public class CounterBox : MonoBehaviour
 	/// <summary>
 	/// ボックスにデータを登録する。
 	/// </summary>
-	/// <param name="data">入力するデータ</param>
+	/// <param name="data">入力するデータ。</param>
 	public void InputData(string data)
 	{
 		var splitData = data.Split(',');
+		if (splitData.Length != 2) return;
 		SetName(splitData[0]);
 		CountNumber = int.Parse(splitData[1]);
 	}
