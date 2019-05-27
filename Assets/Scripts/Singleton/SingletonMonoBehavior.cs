@@ -7,6 +7,8 @@ using UnityEngine;
 public class SingletonMonoBehavior<T> : MonoBehaviour 
 	where T : SingletonMonoBehavior<T>, new()
 {
+	protected static GameObject managerObject;
+
 	protected static T _instance = null;
 	public static T Instance
 	{
@@ -14,11 +16,18 @@ public class SingletonMonoBehavior<T> : MonoBehaviour
 		{
 			if(_instance == null)
 			{
+				// エディタ上で設定されていないか確認
 				_instance = FindObjectOfType <T>();
 
+				// なければGameObjectを生成しアタッチする
 				if (_instance == null)
 				{
-					_instance = new GameObject("Manager").AddComponent<T>();
+					if (managerObject == null)
+					{
+						managerObject = new GameObject("SingletonObject");
+					}
+
+					_instance = managerObject.AddComponent<T>();
 				}
 			}
 			return _instance;

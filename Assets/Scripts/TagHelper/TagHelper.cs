@@ -12,7 +12,7 @@ public class TagHelper
 	/// 実行時にのみ有効なタグを追加する。
 	/// </summary>
 	/// <param name="setTagName">設定したいタグ名。</param>
-	public static void AddTag(string setTagName)
+	public static bool AddTag(string setTagName)
 	{
 		// タグマネージャーアセットを取得
 		var tagManager = AssetDatabase.LoadAllAssetsAtPath("ProjectSettings/TagManager.asset");
@@ -26,7 +26,7 @@ public class TagHelper
 			// タグが既に登録されていないか確認
 			for (int i = 0; i < tagsProperty.arraySize; ++i)
 			{
-				if (tagsProperty.GetArrayElementAtIndex(i).stringValue == setTagName) return;
+				if (tagsProperty.GetArrayElementAtIndex(i).stringValue == setTagName) return true;
 			}
 
 			// タグ登録
@@ -37,6 +37,11 @@ public class TagHelper
 			// 更新を保存
 			serializedObject.ApplyModifiedProperties();
 			serializedObject.Update();
+			return true;
+		}
+		else
+		{
+			return false;
 		}
 	}
 }
