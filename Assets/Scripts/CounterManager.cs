@@ -10,10 +10,10 @@ public class CounterManager : SingletonMonoBehavior<CounterManager>
 {
 	//--------------------------------------------------
 	// フィールド
-	[SerializeField]
+	[SerializeField, Tooltip("カウンターボックスを生成するオブジェクトのTransform")]
 	private Transform _createTarget = null;
 
-	[SerializeField]
+	[SerializeField, Tooltip("カウンターボックスのPrefab")]
 	private GameObject _prefavCounterBox = null;
 
 	//--------------------------------------------------
