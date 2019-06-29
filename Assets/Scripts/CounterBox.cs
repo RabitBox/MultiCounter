@@ -10,16 +10,21 @@ public class CounterBox : MonoBehaviour
 {
 	//--------------------------------------------------
 	// フィールド
+	[Header("uGUI Buttons")]
 	[SerializeField]
 	private Button _addButton = null;   // 増加ボタン
 	[SerializeField]
 	private Button _gainButton = null;  // 減少ボタン
 	[SerializeField]
 	private Button _closeButton = null; // カウンターボックス削除ボタン
+
+	[Header("uGUI Texts")]
 	[SerializeField]
 	private Text _nameText = null;      // カウントするモノの名前
 	[SerializeField]
 	private Text _countText = null;     // カウント数の表示テキストフィールド
+
+	[Header("Data")]
 	[SerializeField]
 	private int _countNumber = 0;       // 現在のカウント
 
